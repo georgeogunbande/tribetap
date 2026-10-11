@@ -1,89 +1,96 @@
-# FlatPurse Flow pricing strategy
+# FlatPurse Flow pricing strategy (final)
 
-Generated 2026-10-11. USD list prices (competitors list in USD; use Stripe multi-currency to charge CAD to Canadian customers). Competitor prices come from search results and third-party listings, not vendor pages, so re-check them before publishing. Tier names Basic / Pro / Pro+ / Unlimited and the Basic limit of 50 appointments a month are kept from your existing plan.
+Prepared 2026-10-11. All prices CAD. Based on the Flow feature list, the Stripe Card Plan (Oct 9, 2026) and competitor research. Competitor prices come from third-party listings, not vendor pages; re-check before publishing. Every cost below is an estimate unless stated.
 
-## 1. Pricing model fit
+## Decisions
 
-| Model | Fit | Pros | Cons |
-|---|---|---|---|
-| Flat subscription | 4 | Predictable MRR; simple to explain | Staff-heavy shops get the same price as solos |
-| Usage-based | 3 | Appointments map to value and cost | Bills vary; owners dislike surprises |
-| Per-seat | 4 | Industry standard (Vagaro, Fresha); revenue grows with the shop | Punishes growth; many owners hide staff to cut cost |
-| Freemium | 5 | Free is table stakes (Square has one); fastest path to 1,000 signups | Free users cost support time |
-| Credits | 2 | Fits SMS and AI-marketing sends only | Confusing for the core product |
-| One-time purchase | 1 | None | Ongoing hosting, SMS and AI cost |
+1. **No permanent free tier at launch.** Use a 14-day no-card trial. Reason: card payments earn Flow nothing in Phase 1 (salons pay Stripe directly), so a free user costs hosting and support and pays nothing.
+2. **Reconsider a free Starter in Phase 2**, only if Stripe approves wholesale pricing and only while the salon processes cards through Flow (Square's model). The Stripe plan values 0.3% markup on C$30,000 a month at about C$90 a month per salon.
+3. **One real price per tier.** No strikethrough list prices and no month-13 price jump. Canada's Competition Act treats an "ordinary price" claim as misleading if the higher price was not genuinely charged; have a lawyer check any struck-through price.
+4. **Card payments are included in every tier with no Flow fee**, at Stripe's standard rates: 2.7% + 20¢ tapped, 30¢ flat Interac, 2.9% + 30¢ online. Remove the 2.6% + 10¢ rate and any per-plan card rates from the pricing page, Founders Beta materials and pitch deck.
 
-**Recommendation: freemium + flat tiers gated by appointments, staff and locations**, with SMS and AI sends capped inside each tier. Reason: tiers with staff caps give you per-seat-like growth without a per-seat bill that owners dodge.
+## Tiers
 
-## 2. Tiers
-
-| | **Basic** | **Pro** | **Pro+** | **Unlimited** |
+| | **Starter** | **Pro** | **Pro+** (anchor, "most popular") | **Enterprise** |
 |---|---|---|---|---|
-| Monthly | $0 | $29 | $69 | $149 |
-| Annual | $0 | $290 (17% off, about $24.17/mo) | $690 (17% off, $57.50/mo) | $1,490 (17% off, about $124.17/mo) |
-| Appointments / month | 50 | 500 | 2,000 | Unlimited |
-| Staff | 1 | 3 | 10 | Unlimited |
-| Locations | 1 | 1 | 1 | Up to 5 (+$39 each after) |
-| Booking + POS | Booking page, POS (Stripe) | Same, plus deposits and no-show fees | Same | Same |
-| Website builder | No | 1 site | 1 site, custom domain | 1 site per location |
-| Staff commissions | No | Yes | Yes | Yes |
-| Memberships and packages | No | No | Yes | Yes |
-| AI marketing | No | No | 1,000 sends / mo | 10,000 sends / mo |
-| SMS reminders | Email only | 200 / mo | 500 / mo | 1,500 / mo |
-| Support | Help centre | Email | Email + chat | Priority |
-| Sales model | Self-serve | Self-serve | Self-serve | Self-serve to 5 locations; sales-led above |
+| Monthly | C$29 | C$69 | C$139 | Custom (from about C$349) |
+| Annual (2 months free) | C$290 | C$690 | C$1,390 | Custom |
+| Team members | 1 | 5 | 15 | Unlimited |
+| Bookings / month | 150 | Unlimited | Unlimited | Unlimited |
+| Core: dashboard, calendar, bookings, clients, online booking page, business setup | Yes | Yes | Yes | Yes |
+| Payments (Tap to Pay, Interac, online deposits, payment links), no Flow fee | Yes | Yes | Yes | Yes |
+| Deposits and no-show fees | Yes | Yes | Yes | Yes |
+| Reminders | Email | Email + 300 SMS (if built) | Email + 600 SMS | Custom |
+| AI Front Desk | – | 300 conversations / mo | 1,000 / mo | Custom |
+| AI Daily Brief | – | Yes | Yes | Yes |
+| Family Hours, Advanced Permissions | – | – | Yes | Yes |
+| Flow Coach | – | – | Yes | Yes |
+| AI Autopilot | – | – | 1,500 sends / mo | Custom |
+| Advanced Analytics, Revenue Optimization, Priority AI, Early access | – | – | Yes | Yes |
+| Support | Basic | Priority | Priority + chat | Dedicated CSM, SLA |
+| Multi-location, enterprise roles and security, dedicated onboarding, API and integrations (future) | – | – | – | Yes |
 
 Upgrade triggers:
-- Basic to Pro: the 51st appointment of the month, or a second staff member.
-- Pro to Pro+: a 4th staff member, or wanting memberships or AI marketing.
-- Pro+ to Unlimited: a second location, or more than 2,000 appointments a month.
+- Starter to Pro: a second team member, more than 150 bookings a month, or wanting AI Front Desk.
+- Pro to Pro+: a 6th team member, or wanting Flow Coach or AI Autopilot.
+- Pro+ to Enterprise: a third location, or more than 15 team members.
 
-## 3. Competitor pricing (USD, checked 2026-10-11 via search)
+Notes on the feature list:
+- Only list a feature on the page once it has shipped. Flow Coach promises predictive analytics and pricing and staffing recommendations; label anything not live as early access.
+- "Family Hours" is not defined in the source, so its tier placement is a guess.
+- POS, website builder, staff commissions and memberships are not in the feature list. If they exist: website builder and commissions at Pro, memberships at Pro+.
+- SMS caps assume SMS exists. The feature list only names email reminders.
 
-| Competitor | Price | Included | Our position |
-|---|---|---|---|
-| [Square Appointments](https://square.com/help/ca/en/article/6359-square-appointments-subscription-options) | Free; Plus $35; Premium $85, per location (varies by country) | Booking, POS | Pro ($29) just below Plus. Unlimited ($149) is above Premium but covers 5 locations, where Square charges per location |
-| [Vagaro](https://koalendar.com/blog/vagaro-pricing) | $30 for 1 calendar, +$10 per extra, about $90 at 7 staff; add-ons extra (SMS from $20/mo, website $10-20) | Booking, POS | Pro ($29) covers 3 staff, where Vagaro charges about $50. Pro+ ($69) includes marketing and website that Vagaro bills as add-ons |
-| [Fresha](https://www.fresha.com/pricing) | About $14.95 per team member (third-party); 20% fee on new marketplace clients | Booking, POS, marketplace | Pro is cheaper for 3 staff (about $45 at Fresha). We charge no marketplace commission |
-| [GlossGenius](https://koalendar.com/blog/gloss-genius-pricing) | $24 / $48 / $148 billed annually ($28 / $56 / $168 monthly) | Booking, POS, website, marketing | Unlimited ($149) matches Platinum; Pro+ ($69 monthly) is above Gold ($56) but adds memberships and AI marketing |
-| [Acuity](https://koalendar.com/blog/acuity-scheduling-pricing) | $20 / $34 / $61 monthly ($16 / $27 / $49 annual) | Scheduling only | Above on price, but includes POS and marketing |
+## Competitors (USD, third-party listings, checked 2026-10-11)
 
-Placement: the market has a free entry tier, $25-$35 for small shops, and $60-$150 for larger ones. Your four tiers follow that shape.
+| Shop size | FlatPurse (at 0.72 USD per CAD) | Vagaro | Fresha | Square Appointments | GlossGenius |
+|---|---|---|---|---|---|
+| Solo | $21 (Starter) | $30 + add-ons | $20 | Free, or $35 | $24-28 |
+| 3 staff | $50 (Pro) | $50 + add-ons | $45 + 20% new-client fee | $35 per location | $48-56 |
+| 6 staff | $100 (Pro+) | $80 + add-ons | $90 | $85 | n/a |
+| 10 staff | $100 (Pro+) | $90 + add-ons | $150 | $85 | $148-168 |
 
-## 4. Unit economics (every cost is an estimate unless noted)
+Position: "one price, nothing extra" against Vagaro's add-ons (one review put a 4-staff salon using everything at about $134 USD a month). Interac at a flat 30¢ is cheaper than Square's 0.75% + 7¢ on any sale over about C$31, and there is no commission on new clients.
 
-Assumptions (estimates): Stripe subscription billing fee 2.9% + $0.30 (published rate); support valued at $30/hr; support minutes a month: Pro 10, Pro+ 20, Unlimited 60; SMS at about $0.008 each; AI marketing at about $0.003 per send.
+Check first: Square's page in my results was the Canadian help page, and its $35 and $85 may be in CAD. If so, Pro+ at C$139 is well above Square Premium. Do not cut Pro+ to C$119 without checking AI cost (below); lead with the all-in comparison against Vagaro instead.
 
-| Tier | Revenue | Stripe | Infra | SMS | AI | Support | Gross margin |
-|---|---|---|---|---|---|---|---|
-| Basic | $0 | $0 | $0.50 | $0 | $0 | $0 | -$0.50 |
-| Pro | $29 | $1.14 | $2.00 | $1.60 | $0 | $5 | $19.26, 66% |
-| Pro+ | $69 | $2.30 | $5.00 | $4.00 | $3 | $10 | $44.70, 65% |
-| Unlimited | $149 | $4.62 | $12.00 | $12.00 | $30 | $30 | $60.38, 41% |
+## Unit economics (estimates)
 
-Unlimited margin is lower because the 10,000 AI sends and 1,500 SMS cost the most. If margin matters more than headline limits, cut the AI cap to 5,000 sends (AI cost $15, margin $75.38, 51%).
+Assumptions: Stripe subscription billing 2.9% + C$0.30; AI at about C$0.03 per conversation; support valued at C$40/hr. Replace AI costs with your real LLM bills.
 
-Break-even (fixed costs about $300/mo, estimate): 16 Pro, or 7 Pro+, or 5 Unlimited customers.
+| Tier | Revenue | Billing fee | Infra | AI | Support | Gross margin |
+|---|---|---|---|---|---|---|
+| Starter | C$29 | C$1.14 | C$3 | C$0 | C$5 | C$19.86, 68% |
+| Pro | C$69 | C$2.30 | C$3 | C$9 | C$7 | C$47.70, 69% |
+| Pro+ | C$139 | C$4.33 | C$6 | C$43 | C$14 | C$71.67, 52% |
 
-Target blended ARPU: about $55/mo (55% Pro, 35% Pro+, 10% Unlimited: 0.55 × 29 + 0.35 × 69 + 0.10 × 149).
+At C$119, Pro+ margin falls to about 44%.
 
-The goal of 1,000 customers in 2 months is aggressive. If it happened and 15% paid, that is 150 paying accounts at $55 = $8,250 MRR, with 850 free accounts costing about $425/mo in infrastructure. A more likely first-year target is 40 beta accounts becoming 100 paying.
+- Break-even (fixed costs about C$417 a month, estimate): about 21 Starter, 9 Pro or 6 Pro+ customers.
+- Target blended revenue per customer: about C$59.50 a month (50% Starter, 35% Pro, 15% Pro+).
+- 1,000 trial signups at 20% conversion is 200 paying accounts and about C$11,900 MRR. At 10% it is about C$5,950 MRR.
 
-Not included: Stripe processing on customer card payments. If you add a platform fee via Stripe Connect, treat it as upside, not baseline.
+## Pricing psychology
 
-## 5. Pricing psychology
+1. **Anchor:** Pro+ at C$139, highlighted.
+2. **Decoy:** Pro lacks Flow Coach and AI Autopilot, so any shop above a solo sees Pro+ as the obvious step.
+3. **Annual framing:** "Pay for 10 months, get 12", with the monthly equivalent shown.
 
-1. **Anchor:** Unlimited at $149, shown first or on the right, so Pro+ at $69 feels moderate.
-2. **Decoy:** Pro (no memberships, no AI marketing, 3 staff) exists to make Pro+ the obvious pick for any shop above a solo.
-3. **Annual framing:** "Pay for 10 months, get 12", with the monthly equivalent underneath ($24.17 Pro, $57.50 Pro+).
+## Launch and scale
 
-## 6. Launch versus scale pricing
+- **Public launch:** 14-day no-card trial, then 50% off the first 3 months.
+- **Founders Beta (first 40 businesses):** 40% off any paid plan for 12 months, locked while the subscription stays active. Show a visible spots-left counter. The beta offer is the only discount that should carry a "was" price.
+- **Grandfathering:** early accounts keep their price while subscribed. Give 60 days' written notice before any change.
+- **Price increases (triggers):** Pro to C$79 and Pro+ to C$159 once there are 150 paying accounts, or once trial-to-paid conversion stays above 25% for two months. Raise Pro+ only after Flow Coach and AI Autopilot deliver measurable results for customers.
 
-- **Launch (first 90 days):** the 40+ beta businesses get Pro+ free for 90 days, then **$35/mo (about half price) locked for 12 months**. Public launch: Pro $29 / Pro+ $69 / Unlimited $149 from day one. Reason: beta accounts supply testimonials and bug reports, and the free quarter proves AI marketing and memberships work.
-- **Grandfathering:** beta and early accounts keep their price as long as the subscription stays active. Give 60 days' written notice for any later change.
-- **Price increases (specific triggers):** raise Pro to $39 and Pro+ to $79 when either (a) 150 paid accounts are active, or (b) Basic-to-paid conversion exceeds 10% for two straight months, which signals underpricing. Revisit Unlimited when multi-location reporting ships.
+## Stripe Card Plan (summary of the Oct 9 spec)
+
+Salons pay Stripe directly, Flow takes no cut, and Flow earns on subscriptions. At C$30,000 a month in tapped cards over 600 sales, the earlier plan of 2.6% + 10¢ would lose about C$173 per salon per month (about C$83,000 a year across 40 beta salons). Developer rules: create every charge as a direct charge on the salon's own Stripe account, including Tap to Pay, online deposits and payment links; leave `application_fee_amount` off. Phase 2: ask Stripe for wholesale (interchange-plus) pricing and add a small markup (0.3% on C$1 million a month is about C$3,000 a month).
 
 ## Open questions
-- Is the 50-appointment Basic cap right? A solo barber at 3 clients a day hits 50 in about 17 days, which is a good natural upgrade trigger.
-- Does the product already support SMS, memberships and multi-location? Do not list a feature in a tier until it ships.
-- Will you charge a platform fee on Stripe payments? That changes the margin table.
+
+- Is a free Starter wanted at launch? The features document says free forever; this recommendation says trial plus paid until Phase 2. One source of truth is needed.
+- What does "Family Hours" include?
+- Does SMS exist, and through which channel does AI Front Desk talk to clients?
+- Do POS, website builder, staff commissions and memberships exist, and in which tier?
+- What do AI Front Desk, Flow Coach and AI Autopilot really cost per salon per month?
