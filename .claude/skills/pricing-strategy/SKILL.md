@@ -11,7 +11,7 @@ Input: $ARGUMENTS
 
 ## Before you start
 
-Read `${CLAUDE_PLUGIN_ROOT}/shared/conventions.md` and follow it.
+Skip any file below that doesn't exist. Create `founder/` if needed.
 
 - Reads: `founder/facts.md`, `founder/product-brief.md`, `founder/competitor-matrix.md`, `founder/persona-gen.md`, `founder/mvp-scope.md`
 - Needs: the product, who pays for it, and any pricing idea the founder already has
