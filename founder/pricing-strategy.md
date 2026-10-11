@@ -76,7 +76,25 @@ Confirm before launch: real hosting bill (check `render.yaml`), whether storage 
 - **Grandfathering:** founding hosts keep $19/mo for as long as the subscription stays active, with a 12-month minimum. Give 60 days' written notice before any later change.
 - **Price increases (specific triggers):** raise Host to $49 when either (a) 50 paying hosts are active, or (b) free-to-paid conversion exceeds 8% for two straight months, which signals underpricing. Re-test again when custom categories or questions ship.
 
+## Appendix: CAD and USD side by side
+
+Exchange rate assumed at 1 CAD = 0.72 USD (estimate; I could not confirm today's rate). USD list prices are rounded to charm prices.
+
+| Item | CAD | USD list | Straight conversion |
+|---|---|---|---|
+| Host monthly | $39 | $29 | $28.08 |
+| Host annual | $390 | $290 | $280.80 |
+| Organizer monthly | $129 | $95 | $92.88 |
+| Organizer annual | $1,290 | $950 | $928.80 |
+| Event Pass | $29 | $21 | $20.88 |
+| Founding Host | $19 | $14 | $13.68 |
+
+Against USD competitors: Host at $29 sits level with Kahoot Presenter ($29 monthly) and above Slido Engage ($17.50), but gives 150 guests against Kahoot's 50 and Slido's 200 at Engage. Event Pass at $21 is about 94% below Pigeonhole's one-time Engage plan (about $338).
+
+Margins hold: the costs above are in CAD, and a $29 USD Host sale is about $40 CAD, so the Host margin is about 72% at the CAD price and the same at the USD price.
+
+Recommendation: list in USD for the public pricing page (matches competitors and Stripe's US/online buyers) and charge CAD to Canadian hosts via Stripe multi-currency prices. Decide after the first 10 paying hosts show where they are.
+
 ## Open questions
-- Is a CAD or USD price list better? Most competitors list USD.
 - Does Free's 30-guest limit suit church and community groups, whose events are often larger?
 - Custom categories and questions are not in the current app; do not promise them in a tier until built.
