@@ -2,12 +2,21 @@
   "name": "session-relay",
   "version": "0.1.0",
   "description": "Relays finished plans from a planning session to a building session, and change summaries from the building session to a review session.",
+  "author": {
+    "name": "George Ogunbande"
+  },
+  "license": "MIT",
   "userConfig": {
     "role": {
       "type": "string",
       "title": "This session's role",
       "description": "planner sends plans to the builder; builder sends change summaries to the reviewer; reviewer only receives.",
-      "options": ["off", "planner", "builder", "reviewer"],
+      "options": [
+        "off",
+        "planner",
+        "builder",
+        "reviewer"
+      ],
       "default": "off"
     },
     "registry": {

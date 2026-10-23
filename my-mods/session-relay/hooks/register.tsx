@@ -63,12 +63,14 @@ export const register: Register = (on, options) => {
 
     return next(e)
   })
+  .catch(($, e, next) => next(e))
 
-  on('tool.call', { tool: ["Edit", "Write"] }, ($, e, next) => {
+  on('tool.call', { tool: ['Edit', 'Write'] }, ($, e, next) => {
     if (role === 'builder') if ('file_path' in e) edited.add(e.file_path)
 
     return next(e)
   })
+  .catch(($, e, next) => next(e))
 
   on('turn.complete', async ($, e, next) => {
     const ran = await next(e)
@@ -96,4 +98,5 @@ export const register: Register = (on, options) => {
 
     return next(e)
   })
+  .catch(($, e, next) => next(e))
 }
